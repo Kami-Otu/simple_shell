@@ -138,7 +138,7 @@ void fork_cmd(pinfo_t *info)
 {
 	/* TODO: PUT ERROR FUNCTION */
 	perror("Error:");
-	return;
+	/* return; */
 }
 	if (child_pid == 0)
 {
