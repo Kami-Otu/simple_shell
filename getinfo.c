@@ -1,7 +1,7 @@
 #include "alxse.h"
 
 /**
- * clear_info – func that initializes pinfo_t struct
+ * clear_info - func that initializes pinfo_t struct
  * @info: struct address
  */
 

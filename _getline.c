@@ -91,7 +91,7 @@ return (h); /* return length of buffer from the _getline() */
 }
 
 /**
- * read_buf – func that reads a buffer from _getline
+ * read_buf - func that reads a buffer from _getline
  * @info: parameter struct
  * @buf: buffer
  * @i: size

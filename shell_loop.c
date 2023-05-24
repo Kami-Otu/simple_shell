@@ -10,10 +10,10 @@
 
 int hsh(pinfo_t *info, char **av)
 {
-	ssize_t h = 0;
-	int builtin_ret = 0;
+ssize_t h = 0;
+int builtin_ret = 0;
 
-	while (h != -1 && builtin_ret != -2)
+while (h != -1 && builtin_ret != -2)
 {
 	clear_info(info);
 	if (interactive(info))
@@ -31,17 +31,17 @@ int hsh(pinfo_t *info, char **av)
 		_putchar('\n');
 	free_info(info, 0);
 }
-	write_history(info);
-	free_info(info, 1);
-	if (!interactive(info) && info->status)
-		exit(info->status);
-	if (builtin_ret == -2)
+write_history(info);
+free_info(info, 1);
+if (!interactive(info) && info->status)
+	exit(info->status);
+if (builtin_ret == -2)
 {
 	if (info->err_num == -1)
 		exit(info->status);
 	exit(info->err_num);
 }
-	return (builtin_ret);
+return (builtin_ret);
 }
 
 /**
@@ -56,8 +56,8 @@ int hsh(pinfo_t *info, char **av)
 
 int find_builtin(pinfo_t *info)
 {
-	int x, built_in_ret = -1;
-	builtin_t builtintbl[] = {
+int x, built_in_ret = -1;
+builtin_t builtintbl[] = {
 	{"exit", _myexit},
 	{"env", _myenv},
 	{"help", _myhelp},
@@ -69,14 +69,14 @@ int find_builtin(pinfo_t *info)
 	{NULL, NULL}
 };
 
-	for (x = 0; builtintbl[x].type; x++)
+for (x = 0; builtintbl[x].type; x++)
 	if (_strcmp(info->argv[0], builtintbl[x].type) == 0)
 	{
 		info->line_count++;
 		built_in_ret = builtintbl[x].funct(info);
 		break;
 	}
-	return (built_in_ret);
+return (built_in_ret);
 }
 
 /**
@@ -88,28 +88,28 @@ int find_builtin(pinfo_t *info)
 
 void find_cmd(pinfo_t *info)
 {
-	char *path = NULL;
-	int x, k;
+char *path = NULL;
+int x, k;
 
-	info->path = info->argv[0];
-	if (info->linecount_flag == 1)
+info->path = info->argv[0];
+if (info->linecount_flag == 1)
 {
-	info->line_count++;
-	info->linecount_flag = 0;
+info->line_count++;
+info->linecount_flag = 0;
 }
-	for (x = 0, k = 0; info->arg[x]; x++)
+for (x = 0, k = 0; info->arg[x]; x++)
 	if (!is_delim(info->arg[x], " \t\n"))
 		k++;
-	if (!k)
-		return;
+if (!k)
+	return;
 
-	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
-	if (path)
+path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
+if (path)
 {
 	info->path = path;
 	fork_cmd(info);
 }
-	else
+else
 {
 	if ((interactive(info) || _getenv(info, "PATH=")
 				|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
@@ -131,16 +131,16 @@ void find_cmd(pinfo_t *info)
 
 void fork_cmd(pinfo_t *info)
 {
-	pid_t child_pid;
+pid_t child_pid;
 
-	child_pid = fork();
-	if (child_pid == -1)
+child_pid = fork();
+if (child_pid == -1)
 {
 	/* TODO: PUT ERROR FUNCTION */
 	perror("Error:");
 	/* return; */
 }
-	if (child_pid == 0)
+if (child_pid == 0)
 {
 	if (execve(info->path, info->argv, _getenviron(info)) == -1)
 	{
@@ -152,7 +152,7 @@ void fork_cmd(pinfo_t *info)
 
 	/* TODO: PUT ERROR FUNCTION */
 }
-	else
+else
 {
 	wait(&(info->status));
 	if (WIFEXITED(info->status))
