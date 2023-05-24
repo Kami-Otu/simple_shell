@@ -86,5 +86,5 @@ if (c == BUF_FLUSH || x >= WRITE_BUF_SIZE)
 }
 if (c != BUF_FLUSH)
 	buf[x++] = c;
-	return (1);
+return (1);
 }

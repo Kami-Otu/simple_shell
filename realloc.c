@@ -31,7 +31,7 @@ if (!pp)
 	return;
 while (*pp)
 	free(*pp++);
-	free(w);
+free(w);
 }
 
 /**
@@ -61,6 +61,6 @@ if (!m)
 old_size = old_size < new_size ? old_size : new_size;
 while (old_size--)
 	m[old_size] = ((char *)ptr)[old_size];
-	free(ptr);
+free(ptr);
 return (m);
 }
