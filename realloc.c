@@ -1,7 +1,7 @@
 #include "alxse.h"
 
 /**
- * _memset – func that fills memory with a constant byte
+ * _memset - func that fills memory with a constant byte
  * @s: ptr to the memory area
  * @b: byte to fill *s with
  * @n: amount of bytes to be filled
@@ -16,9 +16,10 @@ char *_memset(char *s, char b, unsigned int n)
 	for (x = 0; x < n; x++)
 		s[x] = b;
 	return (s);
+}
 
 /**
- * ffree – func that frees a strn of strns
+ * ffree - func that frees a strn of strns
  * @pp: strn of strns
 */
 
@@ -34,7 +35,7 @@ void ffree(char **pp)
 }
 
 /**
- * _realloc – func that reallocates a block of memory
+ * _realloc - func that reallocates a block of memory
  * @ptr: ptr to previous malloc'ated block
  * @old_size: the byte size of previous block
  * @new_size: the byte size of new block
