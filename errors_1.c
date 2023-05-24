@@ -27,7 +27,7 @@ for (j = 0;  s[j] != '\0'; j++)
 		return (-1);
 }
 return (result);
-
+}
 
 /**
  * print_error - prints err message
@@ -142,5 +142,4 @@ for (j = 0; buf[j] != '\0'; j++)
 		buf[j] = '\0';
 		break;
 	}
-}
 }
