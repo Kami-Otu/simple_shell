@@ -1,8 +1,9 @@
 #include "alxse.h"
 
 /**
- * get_history_file - gets history file
- * @info: the parameter struct
+ * get_history_file - gets history file
+ * @info: the parameter struct
+ *
  * Return: allocated string containg history file
 */
 char *get_history_file(pinfo_t *info)
@@ -23,8 +24,10 @@ char *get_history_file(pinfo_t *info)
 }
 
 /**
- * write_history - func that creates a file, or appends to an existing file
- * @info: parameter struct
+ *  write_history - func that creates a file, or appends
+ *  to an existing file
+ *  @info: parameter struct
+ *
  * Return: (1) on success, else (-1)
 */
 int write_history(pinfo_t *info)
@@ -51,8 +54,9 @@ int write_history(pinfo_t *info)
 }
 
 /**
- * read_history - function that reads history from file
- * @info: parameter struct
+ * read_history - function that reads history from file
+ * @info: parameter struct
+ *
  * Return: the histcount on success, 0 otherwise
 */
 int read_history(pinfo_t *info)
@@ -99,11 +103,12 @@ int read_history(pinfo_t *info)
 }
 
 /**
- * build_history_list - function that adds entry to a history linked list
+ * build_history_list - function that adds entry to a history linked list
  * @info: Structure containing potential args.
  * Used to maintain
  * @buf: buffer
- * @linecount: the history linecount, histcount
+ * @linecount: the history linecount, histcount
+ *
  * Return: Always 0
 */
 int build_history_list(pinfo_t *info, char *buf, int linecount)
@@ -120,8 +125,9 @@ int build_history_list(pinfo_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - renumbers the history linked list after changes
- * @info: Structure containing potential arguments. Used to maintain
+ * renumber_history - renumbers the history linked list after changes
+ *  @info: Structure containing potential arguments. Used to maintain
+ *
  * Return: new histcount
 */
 int renumber_history(pinfo_t *info)
