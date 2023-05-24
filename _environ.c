@@ -14,7 +14,7 @@ return (0);
 }
 
 /**
- * get_env - gets value of an environ variable
+ * _getenv - gets value of an environ variable
  * @info: Structure containing potential arguments.
  * Used to maintain constant function prototype.
  * @name: env var name

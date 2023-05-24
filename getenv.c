@@ -1,7 +1,7 @@
 #include "alxse.h"
 
 /**
- * _getenviron – function that returns the strn arr copy of our env
+ * _getenviron - function that returns the strn arr copy of our env
  * @info: Structure containing potential args.
  * Used to maintain constant function prototype.
  * Return: Always (0)
@@ -52,7 +52,7 @@ return (info->env_changed);
 }
 
 /**
- * _setenv – function to initialize a new environment variable,
+ * _setenv - function to initialize a new environment variable,
  * or modify an existing one
  * @info: Structure containing potential arguments.
  * Used to maintain constant function prototype.
