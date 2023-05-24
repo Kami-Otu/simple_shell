@@ -24,7 +24,7 @@ int is_cmd(pinfo_t *info, char *path)
 }
 
 /**
- * dub_chars - duplicate chars
+ * dup_chars - duplicate chars
  * @pathstr: path strn
  * @start: the starting index
  * @stop: the stopping index
