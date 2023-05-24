@@ -20,7 +20,8 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings – func that returns an arr of strns of the list->str
+ * list_to_strings - func that returns an arr of strns
+ *of the list->str
  * @head: the ptr to first node
  *
  * Return: the array of strings
@@ -57,7 +58,7 @@ char **list_to_strings(list_t *head)
 }
 
 /**
- * print_list - print_list - func that prints all elements of
+ * print_list - func that prints all elements of
  * a list_t linked list
  * @h: the ptr to first node
  *
@@ -70,7 +71,7 @@ size_t print_list(const list_t *h)
 
 	while (h)
 {
-	_puts(convert_number(h->num, 10, 0));
+	_puts(convert_number(h->number, 10, 0));
 	_putchar(':');
 	_putchar(' ');
 	_puts(h->str ? h->str : "(nil)");
